@@ -318,6 +318,12 @@
          <artifactId>groovy-jsr223</artifactId>
          <scope>test</scope>
       </dependency>
+      <dependency>
+         <groupId>org.apache.logging.log4j</groupId>
+         <artifactId>log4j-web</artifactId>
+         <version>2.6.2</version>
+         <scope>test</scope>
+      </dependency>
 
       <!-- Vert.x -->
       <dependency>
@@ -336,6 +342,21 @@
          <groupId>io.netty</groupId>
          <artifactId>netty-all</artifactId>
          <scope>test</scope>
+      </dependency>
+       <dependency>
+           <groupId>org.arquillian.spacelift</groupId>
+           <artifactId>arquillian-spacelift-api</artifactId>
+           <version>1.0.0.Alpha9</version>
+       </dependency>
+      <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+         <version>4.12</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.jboss.arquillian.test</groupId>
+         <artifactId>arquillian-test-spi</artifactId>
       </dependency>
    </dependencies>
    <build>

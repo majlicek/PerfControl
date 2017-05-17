@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scenario xmlns="urn:perfcake:scenario:8.0">
+   <!--properties/-->
+   <run type="${perfcake.run.type:iteration}" value="${perfcake.run.duration:1000}"/>
+   <generator class="DefaultMessageGenerator" threads="${perfcake.thread.count:50}"/>
+   <sender class="DummySender">
+      <target>Out There!</target>
+   </sender>
+   <reporting>
+      <reporter class="ThroughputStatsReporter"> 
+         <destination class="ConsoleDestination">
+            <period type="iteration" value="100000"/>
+         </destination>
+      </reporter>
+   </reporting>
+</scenario>

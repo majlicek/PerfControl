@@ -10,6 +10,7 @@ import org.perfcake.message.receiver.Receiver;
 import org.perfcake.message.sender.MessageSenderManager;
 import org.perfcake.message.sequence.SequenceManager;
 import org.perfcake.reporting.ReportManager;
+import org.perfcake.util.Utils;
 import org.perfcake.validation.ValidationManager;
 
 import org.apache.logging.log4j.LogManager;
@@ -28,6 +29,8 @@ public class PerfCakeController {
 
    public PerfCakeController(String scenario) {
       setScenario(scenario);
+      Utils.initTimeStamps();
+      Utils.initDebugAgent();
       load();
    }
 
@@ -37,12 +40,6 @@ public class PerfCakeController {
 
    private void setScenario(String scenario) {
       this.scenario = scenario;
-   }
-
-   public String hello() {
-      System.out.println("Funguje mi Hello!!!!!");
-      System.out.println("A mam Scenario!!!!" + scenario);
-      return "Ahoj";
    }
 
    private void load() {
@@ -91,6 +88,7 @@ public class PerfCakeController {
    public void close() {
       try {
          scenarioA.close();
+         System.out.println("zastavil som scenario");
       } catch (PerfCakeException e) {
          log.fatal("Error closing scenario: ", e);
       }
